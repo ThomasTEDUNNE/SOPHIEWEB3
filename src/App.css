@@ -1,0 +1,306 @@
+body {
+  font-family: "Roboto", Arial, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.App {
+  max-width: 2000px;
+  width: 95%;
+  margin: 50px auto;
+  padding: 20px;
+}
+
+.container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.page {
+  margin-top: 20px;
+}
+
+.table-container {
+  max-height: 400px;
+  overflow-y: auto;
+  margin: 20px 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #eeeeee;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #616161;
+  color: white;
+  position: sticky;
+  top: 0;
+  font-weight: 500;
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.import-section {
+  margin: 20px 0;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.file-input {
+  margin-right: 10px;
+}
+
+.file-label {
+  color: #424242;
+  margin-bottom: 10px;
+}
+
+.next-button,
+.export-button {
+  padding: 12px 24px;
+  background-color: #424242;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.next-button:hover,
+.export-button:hover {
+  background-color: #212121;
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.competences-choice {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.competences-choice label {
+  margin-right: 20px;
+  color: #424242;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(3px);
+}
+
+.modal-content {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.competence-evaluation {
+  margin: 15px 0;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+.evaluation-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.evaluation-buttons button {
+  padding: 8px 16px;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 4px;
+  min-width: 40px;
+}
+
+.evaluation-buttons button:hover {
+  background-color: #f5f5f5;
+}
+
+.evaluation-buttons button.selected {
+  background-color: #424242;
+  color: white;
+  border-color: #424242;
+}
+
+.close-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #757575;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+}
+
+.close-button:hover {
+  background-color: #616161;
+}
+
+.student-button {
+  background: none;
+  border: none;
+  color: #424242;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 6px 12px;
+  transition: all 0.3s;
+  border-radius: 4px;
+}
+
+.student-button:hover {
+  background-color: #f5f5f5;
+  color: #212121;
+}
+
+h1,
+.main-title {
+  background-color: #424242;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 10%;
+  margin: 20px auto;
+  transition: all 0.3s ease;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  max-width: 90%;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+h1:hover,
+.main-title:hover {
+  background-color: #212121;
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+h2,
+h3 {
+  text-align: center;
+  color: #424242;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.sub-title {
+  color: #616161;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: -10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.reset-button {
+  margin-top: 40px;
+  margin-left: 20%;
+  padding: 10px 20px;
+  background-color: #757575;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.reset-button:hover {
+  background-color: #616161;
+}
+
+@media (max-width: 768px) {
+  .App {
+    padding: 10px;
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 8px;
+  }
+
+  .evaluation-buttons {
+    flex-wrap: wrap;
+  }
+
+  h1,
+  .main-title {
+    font-size: 1.5rem;
+    padding: 12px 5%;
+  }
+
+  .container {
+    padding: 10px;
+  }
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #424242;
+  margin-right: 8px;
+}
+
+input[type="radio"] {
+  accent-color: #424242;
+  margin-right: 8px;
+}
