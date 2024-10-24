@@ -103,34 +103,45 @@ function App() {
     return coeffSum > 0 ? (total / coeffSum).toFixed(2) : "";
   };
 
-  const exportResults = () => {
+ const exportResults = () => {
     const activeCompetences = isCustomCompetences
       ? competences
       : defaultCompetences;
-    let csv = "NOM,Note";
+
+    // En-tête avec points-virgules
+    let csv = "NOM;Note";
     activeCompetences.forEach((comp) => {
-      csv += `,Note ${comp.name}`;
+      csv += `;Note ${comp.name}`;
     });
     csv += "\n";
 
+    // Pour chaque étudiant
     students.forEach((student) => {
-      const finalGrade = calculateFinalGrade(student);
-      csv += `${student},${finalGrade}`;
+      // Conversion de la note finale avec virgule
+      const finalGrade = calculateFinalGrade(student)
+        .replace(".", ",");
+      
+      csv += `${student};${finalGrade}`;
+      
+      // Ajout des notes par compétence
       activeCompetences.forEach((comp) => {
         const evalValue = evaluations[student]?.[comp.name] || "";
-        csv += `,${evalValue}`;
+        // Si la valeur existe, on la multiplie par 5 pour avoir une note sur 20
+        const formattedValue = evalValue ? (evalValue * 5).toString().replace(".", ",") : "";
+        csv += `;${formattedValue}`;
       });
       csv += "\n";
     });
 
-    const blob = new Blob([csv], { type: "text/csv" });
+    // Création et téléchargement du fichier
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
     a.download = "evaluations.csv";
     a.click();
+    window.URL.revokeObjectURL(url);
   };
-
   // Rendu de la page 1: Liste des élèves
   const renderPage1 = () => (
     <div className="page">
